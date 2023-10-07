@@ -191,7 +191,6 @@ function reloadCart() {
 
         }
     })
-    // total.innerText = totalAmount.toLocaleString();
     quantity.innerText = count;
     cont = 0
 
