@@ -1,0 +1,154 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#imgConteiner1{
+    height: 150px;
+    width: 100%;
+    background-image: url("Assets/headerHomepage.jpg");
+    background-repeat: repeat-x;
+    background-size: 100%;
+}
+
+header div{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 90%);
+}
+
+header div h1{
+    margin: auto;
+    padding: auto;
+    font-size: 35px;
+    background-image: linear-gradient(to bottom, white 50%, black 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+}
+
+
+.slideshow-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideshow-container h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    position: relative;
+    overflow: hidden;
+    width: 70%;
+    height: auto;
+    box-shadow: 5px 5px 5px 5px gray;
+}
+
+.visualize-img {
+    max-width: 100%;
+    transition: transform 0.3s ease; 
+    cursor: pointer;
+    position: relative; 
+    z-index: 1; 
+}
+
+.caption {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    border-radius: 10px;
+}
+
+.seccion2-container{
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.seccion2-container a{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow{
+    margin: 0;
+    margin-left: 10px;
+}
+
+.seccion2-container a:hover{
+    background-color: gray;
+    color: #000;
+}
+
+
+
+.footer {
+    background: #000;
+    padding: 10px 0px;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+}
+
+.footer .row {
+    width: 100%;
+    margin: 1% 0%;
+    padding: 0.6% 0%;
+    color: rgb(255, 255, 255);
+    font-size: 0.8em;
+}
+
+.footer .row a {
+    text-decoration: none;
+    color: gray;
+    transition: 0.5s;
+}
+
+.footer .row a:hover {
+    color: #fff;
+}
+
+.footer .row ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer .row a i {
+    font-size: 2em;
+    margin: 0% 1%;
+}
+
+.footer .row p{
+    color: gray;
+    font-size: 10px;
+}
