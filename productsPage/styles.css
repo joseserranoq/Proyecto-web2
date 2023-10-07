@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 body {
     font-family: 'Courier New', Courier, monospace;
     padding-top: 150px;
@@ -90,6 +92,7 @@ header .shopping span {
     justify-content: center;
     align-items: center;
 }
+
 .catalogue .item {
     text-align: center;
     box-shadow: 0 20px 20px #252525;
@@ -129,7 +132,8 @@ header .shopping span {
     width: 25%;
     padding: 5px;
     margin-bottom: 20px;
-    border: none; /*quitar el border por defecto de un boton*/
+    border: none;
+    /*quitar el border por defecto de un boton*/
 }
 
 .cart {
@@ -153,46 +157,154 @@ header .shopping span {
     bottom: 0;
     width: 100%;
 }
+
 .cart p {
     width: 80%;
     color: white;
     margin-left: 20px;
 }
+
 .cart .close {
     margin-left: 20px;
     color: white;
 }
-/*- - - - - - - - - -- - - - - - - - - -*/
-.payment {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 420px;
-    background-color: #000;
-    height: 100vh;
-    transition: 0.5s;
-    transform: translateX(100%);
-    overflow-y: auto;
-}
-.pay-active .payment {
-    transform: translateX(0);
-}
-.pay-active .cart {
-    transform: translateX(100%);
-}
-.payment .close {
-    margin-left: 30px;
-    color: white;
-}
-
-
-
 
 .catalogue button:hover {
     background-color: #f11111;
 }
 
+/*- - - - - - - - - -- - - - - - - - - -*/
+.payment {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    backdrop-filter: blur(60px);
+    height: 100vh;
+    transition: 0.5s;
+    transform: translateX(100%);
+    overflow-y: auto;
+}
 
+.pay-active .payment {
+    transform: translateX(0);
+}
+
+.pay-active .cart {
+    transform: translateX(100%);
+}
+
+.close-payment {
+    margin-left: 20px;
+    color: white;
+}
+
+/* - - - -- - - - - -- - Payment - - - - --  -- */
+
+.paymentCart {
+    margin: 0;
+    background-color: #f6f6f6;
+}
+
+.paymentCart li {
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    font-family: 'Play', sans-serif;
+    margin-top: 20px;
+    margin-right: 40px;
+    font-weight: 200;
+    color: #000000;
+}
+
+.paymentCart li div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paymentCart .count {
+    margin: 0 5px;
+}
+
+.payment .checkOut .total {
+    font-family: 'Play', sans-serif;
+    color: white;
+    width: 100%;
+    font-weight: bold;
+    background-color: #f6f6f6;
+    color: #000;
+    cursor: pointer;
+}
+
+.payment .checkOut .total p {
+    padding-top: 25px;
+    text-align: center;
+}
+
+/* - - - - - - Toast - - - - - - */
+.toast{
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 10px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: 70px 1fr 70px;
+    border-radius: 5px;
+    --color: #0abf30;
+    background-color:rgb(255, 255, 255); 
+    color: #000;
+    animation: show 0.3s ease 1 forwards ; 
+    position: fixed;
+    bottom: 20px;
+    right: 0;
+}
+.toast i{
+    color: var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+.toast .title{
+    font-weight: bold;
+}
+.toast span {
+    font-size: small;
+}
+@keyframes show{
+    0%{
+        transform: translateX(100%);
+    }
+    40%{
+        transform: translateX(-5%);
+    }
+    80%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-10%);
+    }
+}
+.toast::before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color);
+    width: 100%;
+    height: 3px;
+    content: '';
+    box-shadow: 0 0 10px var(--color);
+    animation: timeOut 5s linear 1 forwards
+}
+@keyframes timeOut{
+    to{
+        width: 0;
+    }
+}
+
+
+/* -- - - - - - - Carrito - - - - - - - - -*/
 .catalogueCart li {
     display: grid;
     grid-template-columns: 100px repeat(3, 1fr);
@@ -202,6 +314,7 @@ header .shopping span {
     font-weight: 200;
     color: #ffffff;
 }
+
 .catalogueCart li div {
     display: flex;
     justify-content: center;
@@ -223,22 +336,7 @@ header .shopping span {
 .catalogueCart .count {
     margin: 0 5px;
 }
-
-.cart .checkOut .total {
-    color: white;
-    background-color: #f11111;
-    width: 100%;
-    height: 70px;
-    font-weight: bold;
-    cursor: pointer;
-    bottom: 0;
-}
-
-.cart .checkOut .total p {
-    padding-top: 25px;
-    text-align: center;
-}
-
+/* - - - - - -- - - -Footer - - - - -- - - - */
 .footer {
     margin-top: 100px;
     background: #000;
@@ -287,6 +385,7 @@ header .shopping span {
     .catalogue {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .footer {
         text-align: left;
         padding: 5%;
@@ -300,19 +399,23 @@ header .shopping span {
 
     .footer .row a i {
         margin: 0% 3%;
-        
+
     }
 }
+/* - - - - - - - Vista Celular - - - - - - -*/
 @media (max-width: 450px) {
     .catalogue {
         grid-template-columns: repeat(1, 1fr);
     }
+
     .catalogue .item {
         margin: 40px;
     }
+
     .active .cart {
         width: 100%;
     }
+
     .cart .checkOut {
         width: 100%;
     }
@@ -320,19 +423,32 @@ header .shopping span {
     .cart .checkOut .total {
         width: 100%;
     }
+
     .catalogue button:hover {
         background-color: #000000;
     }
+
     .catalogueCart li {
         display: flex;
         flex-direction: column;
         flex-wrap: 0.5px;
         grid-template-columns: 100px repeat(2, 1fr);
     }
+
     .catalogueCart li img {
         width: 50%;
     }
+
+    .payment {
+        width: 100%;
+    }
+
     header {
         background-position-x: 30%;
     }
+    .toast{
+        width: 320px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
 }
