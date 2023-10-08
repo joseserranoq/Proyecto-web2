@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     visualizeImages.forEach(function (image) {
         image.addEventListener("mouseenter", function () {
-            const scale = 2; 
+            const scale = 1.5; 
             image.addEventListener("mousemove", function (event) {
                 const rect = image.getBoundingClientRect();
                 const x = (event.clientX - rect.left) / rect.width;

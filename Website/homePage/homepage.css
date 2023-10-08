@@ -56,7 +56,7 @@ header div h1{
 img {
     position: relative;
     overflow: hidden;
-    width: 70%;
+    width: 40%;
     height: auto;
     box-shadow: 5px 5px 5px 5px gray;
 }
@@ -142,11 +142,10 @@ img {
 }
 
 .footer .row a i {
-    font-size: 2em;
+    font-size: 30px;
     margin: 0% 1%;
 }
 .footer a{
-    font-size: 2em;
     height: 1rem;
     width: 2rem;
 }
