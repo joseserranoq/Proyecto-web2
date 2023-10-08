@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="pagorealizado.css">
+    <title>Document</title>
+</head>
+
+
+<body onload="createToast('success', 'fa-solid fa-check', 'Purchase done!', 'Your purchase has been done succesfully!')">
+   
+    <div id="content">
+        <a href="/Proyecto-web2/Website/homePage/homepage.html">Back to home</a>
+        <h1>Thank you for your purchase!</h1>
+    </div>
+    <script>
+        function createToast(type, icon, title, text) {
+        notifications = document.getElementById('content');
+        let newToast = document.createElement('div');
+        newToast.innerHTML = `
+                <div class="toast ${type}">
+                    <i class="${icon}"></i>
+                    <div class="content">
+                        <div class="title">${title}</div>
+                        <span>${text}</span>    
+                    </div>
+                    <i class="fa-solid fa-xmark" onclick="(this.parentElement).remove()"></i>
+                </div>`;
+        notifications.appendChild(newToast);
+        newToast.timeOut = setTimeout(
+            () => newToast.remove(), 5000
+        )
+    }
+    </script>
+</body>
+
+
+</html>

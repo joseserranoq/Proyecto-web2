@@ -11,115 +11,130 @@ let total = document.querySelector('.total');
 let quantity = document.querySelector('.quantity');
 let notifications = document.querySelector('.notifications');
 let catalogueCarts = [];
-let products = [
-    {
-        id: 1,
-        name: 'Air Jordan',
-        image: '1.PNG',
-        price: 2000,
-        newPrice: 1000
-    },
-    {
-        id: 2,
-        name: 'Air Jordan',
-        image: '2.PNG',
-        price: 2000,
-        newPrice: 1000
-    },
-    {
-        id: 3,
-        name: 'Air Jordan',
-        image: '3.PNG',
-        price: 2000,
-        newPrice: 1000
-    },
-    {
-        id: 4,
-        name: 'Air Jordan',
-        image: '4.PNG',
-        price: 2000,
-        newPrice: 1000
-    },
-    {
-        id: 5,
-        name: 'Air Jordan',
-        image: '5.PNG',
-        price: 2000,
-        newPrice: 1000
-    },
-    {
-        id: 6,
-        name: 'Air Jordan',
-        image: '6.PNG',
-        price: 2000,
-        newPrice: 1000
-    },
-    {
-        id: 7,
-        name: 'Air Jordan',
-        image: '7.PNG',
-        price: 2000,
-        newPrice: 1000
-    },
-    {
-        id: 8,
-        name: 'Air Jordan',
-        image: '8.PNG',
-        price: 2000,
-        newPrice: 1000
-    },
-    {
-        id: 9,
-        name: 'Air Jordan',
-        image: '9.PNG',
-        price: 2000,
-        newPrice: 1000
-    },
-    {
-        id: 10,
-        name: 'Air Jordan',
-        image: '16.PNG',
-        price: 2000,
-        newPrice: 1000
-    },
-    {
-        id: 11,
-        name: 'Air Jordan',
-        image: '11.PNG',
-        price: 2000,
-        newPrice: 1000
-    },
-    {
-        id: 12,
-        name: 'Air Jordan',
-        image: '12.PNG',
-        price: 2000,
-        newPrice: 1000
-    },
-    {
-        id: 13,
-        name: 'Air Jordan',
-        image: '13.PNG',
-        price: 2000,
-        newPrice: 1000
-    },
-    {
-        id: 14,
-        name: 'Air Jordan',
-        image: '14.PNG',
-        price: 2000,
-        newPrice: 1000
-    },
-];
+let products = [];
+// let products = [
+//     {
+//         id: 1,
+//         name: 'Air Jordan',
+//         image: '1.PNG',
+//         price: 2000,
+//         newPrice: 1000
+//     },
+//     {
+//         id: 2,
+//         name: 'Air Jordan',
+//         image: '2.PNG',
+//         price: 2000,
+//         newPrice: 1000
+//     },
+//     {
+//         id: 3,
+//         name: 'Air Jordan',
+//         image: '3.PNG',
+//         price: 2000,
+//         newPrice: 1000
+//     },
+//     {
+//         id: 4,
+//         name: 'Air Jordan',
+//         image: '4.PNG',
+//         price: 2000,
+//         newPrice: 1000
+//     },
+//     {
+//         id: 5,
+//         name: 'Air Jordan',
+//         image: '5.PNG',
+//         price: 2000,
+//         newPrice: 1000
+//     },
+//     {
+//         id: 6,
+//         name: 'Air Jordan',
+//         image: '6.PNG',
+//         price: 2000,
+//         newPrice: 1000
+//     },
+//     {
+//         id: 7,
+//         name: 'Air Jordan',
+//         image: '7.PNG',
+//         price: 2000,
+//         newPrice: 1000
+//     },
+//     {
+//         id: 8,
+//         name: 'Air Jordan',
+//         image: '8.PNG',
+//         price: 2000,
+//         newPrice: 1000
+//     },
+//     {
+//         id: 9,
+//         name: 'Air Jordan',
+//         image: '9.PNG',
+//         price: 2000,
+//         newPrice: 1000
+//     },
+//     {
+//         id: 10,
+//         name: 'Air Jordan',
+//         image: '16.PNG',
+//         price: 2000,
+//         newPrice: 1000
+//     },
+//     {
+//         id: 11,
+//         name: 'Air Jordan',
+//         image: '11.PNG',
+//         price: 2000,
+//         newPrice: 1000
+//     },
+//     {
+//         id: 12,
+//         name: 'Air Jordan',
+//         image: '12.PNG',
+//         price: 2000,
+//         newPrice: 1000
+//     },
+//     {
+//         id: 13,
+//         name: 'Air Jordan',
+//         image: '13.PNG',
+//         price: 2000,
+//         newPrice: 1000
+//     },
+//     {
+//         id: 14,
+//         name: 'Air Jordan',
+//         image: '14.PNG',
+//         price: 2000,
+//         newPrice: 1000
+//     },
+// ];
 
 function initApp() {
     quantity.style.display = "none";
-    products.forEach((product, key) => {
-        createProductElement(product, key);
-    });
+    var listaJson;
+    var xhr=new XMLHttpRequest();
+    xhr.open('GET','readData.php',true);
+    xhr.onreadystatechange= () => {console.log(xhr.readyState +"ReadyState");}
+        xhr.onload = () => {
+            console.log(xhr.status + "status");
+            if(xhr.status == 200){
+                listaJson = JSON.parse(xhr.responseText);  
+                //products = listaJson;            
+                listaJson.data.forEach((product, key) => {
+                    products = [...products,product];
+                    createProductElement(product, key);
+                });
+            }
+        }
+        xhr.send();
+console.log("se ejecuta la funcion initApp" + products)
 }
 
-initApp();
+//initApp();
 openShopping.addEventListener('click', () => {
     body.classList.add('active');
 })
@@ -177,6 +192,7 @@ function createToast(type, icon, title, text) {
 //     createToast(type, icon, title, text);
 // }
 //-----------------------------------------------
+
 function addToCart(key) {
     if (!catalogueCarts[key]) {
         const cartProduct = { ...products[key], quantity: 1 };
@@ -253,4 +269,8 @@ function payment() {
         }
     })
     total.innerText = "Total: " + totalAmount.toLocaleString();
+}
+
+function redirect(){
+    window.location.href = "https://localhost/Proyecto-web2/Website/IngresoTarjeta/ingresoTarjeta.html";
 }
