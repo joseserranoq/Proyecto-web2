@@ -5,98 +5,112 @@
             "name": "Air Jordan",
             "image": "1.PNG",
             "price": 2000,
-            "newPrice": 1000
+            "newPrice": 1000,
+            "valoraciones" : 4.2
         },
         {
             "id": 2,
             "name": "Air Jordan",
             "image": "2.PNG",
             "price": 2000,
-            "newPrice": 1000
+            "newPrice": 1000,
+            "valoraciones" : 4.4
         },
         {
             "id": 3,
             "name": "Air Jordan",
             "image": "3.PNG",
             "price": 2000,
-            "newPrice": 1000
+            "newPrice": 1000,
+            "valoraciones" : 4.6
         },
         {
             "id": 4,
             "name": "Air Jordan",
             "image": "4.PNG",
             "price": 2000,
-            "newPrice": 1000
+            "newPrice": 1000,
+            "valoraciones" : 3.4
         },
         {
             "id": 5,
             "name": "Air Jordan",
             "image": "5.PNG",
             "price": 2000,
-            "newPrice": 1000
+            "newPrice": 1000,
+            "valoraciones" : 4.7
         },
         {
             "id": 6,
             "name": "Air Jordan",
             "image": "6.PNG",
             "price": 2000,
-            "newPrice": 1000
+            "newPrice": 1000,
+            "valoraciones" : 4.9
         },
         {
             "id": 7,
             "name": "Air Jordan",
             "image": "7.PNG",
             "price": 2000,
-            "newPrice": 1000
+            "newPrice": 1000,
+            "valoraciones" : 5.0
         },
         {
             "id": 8,
             "name": "Air Jordan",
             "image": "8.PNG",
             "price": 2000,
-            "newPrice": 1000
+            "newPrice": 1000,
+            "valoraciones" : 3.7
         },
         {
             "id": 9,
             "name": "Air Jordan",
             "image": "9.PNG",
             "price": 2000,
-            "newPrice": 1000
+            "newPrice": 1000,
+            "valoraciones" : 4.4
         },
         {
             "id": 10,
             "name": "Air Jordan",
             "image": "16.PNG",
             "price": 2000,
-            "newPrice": 1000
+            "newPrice": 1000,
+            "valoraciones" : 4.4
         },
         {
             "id": 11,
             "name": "Air Jordan",
             "image": "11.PNG",
             "price": 2000,
-            "newPrice": 1000
+            "newPrice": 1000,
+            "valoraciones" : 4.1
         },
         {
             "id": 12,
             "name": "Air Jordan",
             "image": "12.PNG",
             "price": 2000,
-            "newPrice": 1000
+            "newPrice": 1000,
+            "valoraciones" : 3.8
         },
         {
             "id": 13,
             "name": "Air Jordan",
             "image": "13.PNG",
             "price": 2000,
-            "newPrice": 1000
+            "newPrice": 1000,
+            "valoraciones" : 5.0
         },
         {
             "id": 14,
             "name": "Air Jordan",
             "image": "14.PNG",
             "price": 2000,
-            "newPrice": 1000
+            "newPrice": 1000,
+            "valoraciones" : 4.6
         }
 ]
 
