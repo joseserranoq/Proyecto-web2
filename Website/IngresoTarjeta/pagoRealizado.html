@@ -13,8 +13,9 @@
 <body onload="createToast('success', 'fa-solid fa-check', 'Purchase done!', 'Your purchase has been done succesfully!')">
    
     <div id="content">
-        <a href="/Proyecto-web2/Website/homePage/homepage.html">Back to home</a>
         <h1>Thank you for your purchase!</h1>
+        <br>
+        <h2>Returning home page...</h2>
     </div>
     <script>
         function createToast(type, icon, title, text) {
@@ -33,6 +34,14 @@
         newToast.timeOut = setTimeout(
             () => newToast.remove(), 5000
         )
+
+        function returning(){
+            setTimeout(function() {
+                window.location.href = '../homePage/homepage.html';
+        }, 5000);
+
+        }
+        returning();
     }
     </script>
 </body>

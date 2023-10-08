@@ -1,117 +1,116 @@
 {
-    "data" :  [
+    "data": [
         {
             "id": 1,
-            "name": "Air Jordan",
+            "name": "Air Jordan Retro High Top",
             "image": "1.PNG",
-            "price": 2000,
-            "newPrice": 1000,
-            "valoraciones" : 4.2
+            "price": 2200,
+            "newPrice": 1100,
+            "valoraciones": 4.2
         },
         {
             "id": 2,
-            "name": "Air Jordan",
+            "name": "Air Jordan Classic Low",
             "image": "2.PNG",
-            "price": 2000,
-            "newPrice": 1000,
-            "valoraciones" : 4.4
+            "price": 1800,
+            "newPrice": 900,
+            "valoraciones": 4.4
         },
         {
             "id": 3,
-            "name": "Air Jordan",
+            "name": "Air Jordan Elite Runner",
             "image": "3.PNG",
-            "price": 2000,
-            "newPrice": 1000,
-            "valoraciones" : 4.6
+            "price": 2500,
+            "newPrice": 1250,
+            "valoraciones": 4.6
         },
         {
             "id": 4,
-            "name": "Air Jordan",
+            "name": "Air Jordan Pro Runner",
             "image": "4.PNG",
-            "price": 2000,
-            "newPrice": 1000,
-            "valoraciones" : 3.4
+            "price": 1900,
+            "newPrice": 950,
+            "valoraciones": 3.4
         },
         {
             "id": 5,
-            "name": "Air Jordan",
+            "name": "Air Jordan Street Style",
             "image": "5.PNG",
-            "price": 2000,
-            "newPrice": 1000,
-            "valoraciones" : 4.7
+            "price": 2100,
+            "newPrice": 1050,
+            "valoraciones": 4.7
         },
         {
             "id": 6,
-            "name": "Air Jordan",
+            "name": "Air Jordan Ultra Boost",
             "image": "6.PNG",
-            "price": 2000,
-            "newPrice": 1000,
-            "valoraciones" : 4.9
+            "price": 2300,
+            "newPrice": 1150,
+            "valoraciones": 4.9
         },
         {
             "id": 7,
-            "name": "Air Jordan",
+            "name": "Air Jordan Pro Max",
             "image": "7.PNG",
-            "price": 2000,
-            "newPrice": 1000,
-            "valoraciones" : 5.0
+            "price": 2400,
+            "newPrice": 1200,
+            "valoraciones": 5.0
         },
         {
             "id": 8,
-            "name": "Air Jordan",
+            "name": "Air Jordan Fusion X",
             "image": "8.PNG",
             "price": 2000,
             "newPrice": 1000,
-            "valoraciones" : 3.7
+            "valoraciones": 3.7
         },
         {
             "id": 9,
-            "name": "Air Jordan",
+            "name": "Air Jordan Prime Impact",
             "image": "9.PNG",
-            "price": 2000,
-            "newPrice": 1000,
-            "valoraciones" : 4.4
+            "price": 2150,
+            "newPrice": 1075,
+            "valoraciones": 4.4
         },
         {
             "id": 10,
-            "name": "Air Jordan",
+            "name": "Air Jordan Elite Flex",
             "image": "16.PNG",
-            "price": 2000,
-            "newPrice": 1000,
-            "valoraciones" : 4.4
+            "price": 1900,
+            "newPrice": 950,
+            "valoraciones": 4.4
         },
         {
             "id": 11,
-            "name": "Air Jordan",
+            "name": "Air Jordan Ultra Comfort",
             "image": "11.PNG",
-            "price": 2000,
-            "newPrice": 1000,
-            "valoraciones" : 4.1
+            "price": 2050,
+            "newPrice": 1025,
+            "valoraciones": 4.1
         },
         {
             "id": 12,
-            "name": "Air Jordan",
+            "name": "Air Jordan Pro Glide",
             "image": "12.PNG",
-            "price": 2000,
-            "newPrice": 1000,
-            "valoraciones" : 3.8
+            "price": 1950,
+            "newPrice": 975,
+            "valoraciones": 3.8
         },
         {
             "id": 13,
-            "name": "Air Jordan",
+            "name": "Air Jordan Retro Max",
             "image": "13.PNG",
-            "price": 2000,
-            "newPrice": 1000,
-            "valoraciones" : 5.0
+            "price": 2600,
+            "newPrice": 1300,
+            "valoraciones": 5.0
         },
         {
             "id": 14,
-            "name": "Air Jordan",
+            "name": "Air Jordan Street Runner",
             "image": "14.PNG",
-            "price": 2000,
-            "newPrice": 1000,
-            "valoraciones" : 4.6
+            "price": 2250,
+            "newPrice": 1125,
+            "valoraciones": 4.6
         }
-]
-
+    ]
 }

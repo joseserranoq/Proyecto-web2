@@ -1,4 +1,4 @@
-let slideIndex = 5;
+let slideIndex = 4;
 let intervalId;
 
 function showSlides() {
@@ -10,11 +10,13 @@ function showSlides() {
     
     slideIndex++;
     
+
     if (slideIndex > slides.length) {
-        slideIndex = 0;
+        slideIndex = 1;
     }
     
     slides[slideIndex - 1].style.display = 'flex';
+    
 }
 
 function startSlideShow() {
