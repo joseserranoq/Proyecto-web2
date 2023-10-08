@@ -11,6 +11,7 @@ let total = document.querySelector('.total');
 let quantity = document.querySelector('.quantity');
 let notifications = document.querySelector('.notifications');
 let catalogueCarts = [];
+let products = [];
 // let products = [
 //     {
 //         id: 1,
@@ -114,21 +115,26 @@ let catalogueCarts = [];
 
 function initApp() {
     quantity.style.display = "none";
-    var products;
+    var listaJson;
     var xhr=new XMLHttpRequest();
     xhr.open('GET','readData.php',true);
     xhr.onreadystatechange= () => {console.log(xhr.readyState +"ReadyState");}
         xhr.onload = () => {
             console.log(xhr.status + "status");
             if(xhr.status == 200){
-                products = JSON.parse(xhr.responseText);                
-                products.data.forEach((product, key) => {
+                listaJson = JSON.parse(xhr.responseText);  
+                //products = listaJson;            
+                listaJson.data.forEach((product, key) => {
+                    products = [...products,product];
                     createProductElement(product, key);
                 });
             }
         }
+        
         xhr.send();
-console.log("se ejecuta la funcion initApp")
+        ;
+
+console.log("se ejecuta la funcion initApp" + products)
 }
 
 initApp();
