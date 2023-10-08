@@ -12,10 +12,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="ruta/a/font-awesome/css/all.min.css">
-
 </head>
 
-<body class="">
+<body class="" onload="initApp()">
+   
     <!-- contenedor de pagina de productos -->
     <div class="container">
         <header>
@@ -23,7 +23,7 @@
                 <h1>SPACESHOP</h1>
                 <div class="notifications"></div>
                 <div class="shopping">
-                    <img src="./Asserts/icons/cart.png">
+                    <img src="./Asserts/icons/cart.png" alt="Image1">
                     <span class="quantity">0</span>
                 </div>
             </div>
@@ -41,7 +41,7 @@
         <p>SHOPPING CART</p>
         <ul class="catalogueCart">
         </ul>
-        <br />
+        <br>
     </div>
     <!-- payment button-->
     <div class="payment">
@@ -49,9 +49,10 @@
         <ul class="paymentCart">
         </ul>
         <div class="checkOut">
-            <div class="total">
-            </div>
-                <button id="buttonPay" onclick="redirect()">CONFIRMAR PAGO</a>
+            <div class="total"></div>
+            <button id="buttonPay" onclick="redirect()">
+                CONFIRMAR PAGO
+            </button>
         </div>
     </div>
     
@@ -82,5 +83,6 @@
     </footer>
     <script src="scripts.js"></script>
 </body>
+
 
 </html>

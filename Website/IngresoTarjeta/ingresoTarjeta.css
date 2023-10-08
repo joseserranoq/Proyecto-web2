@@ -82,7 +82,7 @@ header div h1{
 #imgContainer1{
     height: 150px;
     width: 100%;
-    background-image: url("Assets/headerHomepage.jpg");
+    background-image: url("../homePage/Assets/headerHomepage.jpg");
     background-repeat: repeat-x;
     background-size: 100%;
 }

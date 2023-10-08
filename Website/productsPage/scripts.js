@@ -130,14 +130,11 @@ function initApp() {
                 });
             }
         }
-        
         xhr.send();
-        ;
-
 console.log("se ejecuta la funcion initApp" + products)
 }
 
-initApp();
+//initApp();
 openShopping.addEventListener('click', () => {
     body.classList.add('active');
 })
