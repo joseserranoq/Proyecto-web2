@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<style>
+    /* Center the text vertically and horizontally */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url("Assets/headerHomepage.jpg");
+        background-size: cover;
+    }
+
+    /* Style the success message */
+    h1 {
+        font-size: 10vh;
+        color: greenyellow;
+        text-align: center;
+    }
+
+    /* Style the "Back to home" link */
+    a {
+        display: block;
+        text-align: center;
+        margin: 0.5rem;
+        text-decoration: none;
+        color: greenyellow;
+        font-weight: bold;
+    }
+
+    /* Add hover effect for the link */
+    a:hover {
+        text-decoration: underline;
+    }
+    /* - - - - - - Toast - - - - - - */
+    .toast{
+        font-family: 'Poppins', sans-serif;
+        padding: 10px;
+        color: #fff;
+        margin-bottom: 10px;
+        width: 400px;
+        display: grid;
+        grid-template-columns: 70px 1fr 70px;
+        border-radius: 5px;
+        --color: #0abf30;
+        background-color:rgb(255, 255, 255); 
+        color: #000;
+        animation: show 0.3s ease 1 forwards ; 
+        position: fixed;
+        bottom: 20px;
+        right: 0;
+    }
+    .toast i{
+        color: var(--color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: x-large;
+    }
+    .toast .title{
+        font-weight: bold;
+    }
+    .toast span {
+        font-size: small;
+    }
+    @keyframes show{
+        0%{
+            transform: translateX(100%);
+        }
+        40%{
+            transform: translateX(-5%);
+        }
+        80%{
+            transform: translateX(0%);
+        }
+        100%{
+            transform: translateX(-10%);
+        }
+    }
+    .toast::before{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: var(--color);
+        width: 100%;
+        height: 3px;
+        content: '';
+        box-shadow: 0 0 10px var(--color);
+        animation: timeOut 5s linear 1 forwards
+    }
+    @keyframes timeOut{
+        to{
+            width: 0;
+        }
+    }
+
+</style>
+<script>
+    function createToast(type, icon, title, text) {
+    notifications = document.getElementById('content');
+    let newToast = document.createElement('div');
+    newToast.innerHTML = `
+            <div class="toast ${type}">
+                <i class="${icon}"></i>
+                <div class="content">
+                    <div class="title">${title}</div>
+                    <span>${text}</span>    
+                </div>
+                <i class="fa-solid fa-xmark" onclick="(this.parentElement).remove()"></i>
+            </div>`;
+    notifications.appendChild(newToast);
+    newToast.timeOut = setTimeout(
+        () => newToast.remove(), 5000
+    )
+}
+</script>
+<body onload="createToast('success', 'fa-solid fa-check', 'Purchase done!', 'Your purchase has been done succesfully!')">
+    <div id="content">
+        <a href="/Proyecto-web2/Website/homePage/homepage.html">Back to home</a>
+        <h1>Thank you for your purchase!</h1>
+    </div>
+
+</body>
+
+</html>

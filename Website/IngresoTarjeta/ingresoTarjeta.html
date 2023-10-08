@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment method</title>
+    <link rel="stylesheet" href="ingresoTarjeta.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="ingresoTarjeta.js"></script>
+
+</head>
+<body onload="updateDate()">
+    <header>
+        <div id="imgContainer1"></div>
+        <div><a style="text-decoration: none;" href="homepage.html"><h1>SPACESHOP</h1></a></div>
+    </header>
+    <div class="container">
+        <h2>Credit Card Information</h2>
+            <div class="row">
+                <div class="col">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456">
+                </div>
+                <div class="col">
+                    <label for="expirationMonth">Expiration Date</label>
+                    <!-- <input type="text" id="expirationDate" name="expirationDate" placeholder="MM/YYYY"> -->
+                    <select id="expirationMonth" name="expirationMonth">
+                        <option value="00">Month</option>
+                    </select>
+                    <select id="expirationYear" name="expirationYear">
+                        <option value="00">Year</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123">
+                </div>
+                <div class="col">
+                    <label for="cardHolderName">Cardholder Name</label>
+                    <input type="text" id="cardHolderName" name="cardHolderName" placeholder="John Cena">
+                </div>
+            </div>
+            <h2>Billing Address</h2>
+            <div class="row">
+                <div class="col">
+                    <label for="streetAddress">Street Address</label>
+                    <input type="text" id="streetAddress" name="streetAddress" placeholder="123 Main St">
+                </div>
+                <div class="col">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" placeholder="City">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" placeholder="State">
+                </div>
+                <div class="col">
+                    <label for="zipCode">Zip Code</label>
+                    <input type="text" id="zipCode" name="zipCode" placeholder="Zip Code">
+                </div>
+            </div>
+            <button  onclick="confirmPurchase()">Submit</button>
+        
+    </div>    
+    <footer>
+        <div class="footer">
+            <div class="row">
+                <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.youtube.com"><i class="fa fa-youtube"></i></a>
+                <a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>
+            </div>
+
+            <div class="row">
+                <ul>
+                    <li><a href="https://www.nike.com/es/help">Contact us</a></li>
+                    <li><a href="https://www.nike.com/es/help">Our Services</a></li>
+                    <li><a href="https://www.nike.com/es/help/privacy">Privacy Policy</a></li>
+                    <li><a href="https://www.nike.com.ar/terminos-y-condiciones">Terms & Conditions</a></li>
+                    <li><a href="https://www.nike.com/es/help/a/carreras-nrc">Career</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <p>SPACESHOP Copyright © 2023 SpaceShop - All rights reserved || Make your life better</p>
+            </div>
+        </div>
+    </footer>   
+</body>
+</html>
