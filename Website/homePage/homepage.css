@@ -81,6 +81,16 @@ img {
     border-radius: 10px;
 }
 
+section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+section p {
+    margin: 0; /* Elimina los márgenes predeterminados del párrafo */
+}
+
 .seccion2-container{
     width: 100%;
     margin-top: 30px;
@@ -153,4 +163,18 @@ img {
 .footer .row p{
     color: gray;
     font-size: 10px;
+}
+
+@media (max-width: 870px) {
+
+    img{
+        width: 70%;
+    }
+}
+
+@media (max-width: 415px) {
+
+    img{
+        width: 80%;
+    }
 }
