@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Spaceshop</title>
 </head>
-<body>
+<body onload="mostrarProductos()">
     <header>
         <div id="imgConteiner1"></div>
         <div><a style="text-decoration: none;" href="homepage.html"><h1>SPACESHOP</h1></a></div>
@@ -16,16 +16,8 @@
 
 
     <section >
-        <div class="slideshow-container">
+        <div class="slideshow-container" id="product-container">
             <h2>Productos destacados</h2>
-            <div class="slide">
-                <img class="visualize-img" src="../productsPage/Asserts/productsImages/1.png" alt="Producto 1">
-                <div class="caption">Producto 1</div>
-            </div>
-            <div class="slide">
-                <img class="visualize-img" src="../productsPage/Asserts/productsImages/10.png" alt="Producto 2">
-                <div class="caption">Producto 2</div>
-            </div>
         </div>
 
         <div class="seccion2-container">
@@ -37,8 +29,6 @@
         </div>
 
     </section>
-
-
 
     <footer>
         <div class="footer">
