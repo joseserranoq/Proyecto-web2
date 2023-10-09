@@ -116,22 +116,22 @@ let products = [];
 function initApp() {
     quantity.style.display = "none";
     var listaJson;
-    var xhr=new XMLHttpRequest();
-    xhr.open('GET','readData.php',true);
-    xhr.onreadystatechange= () => {console.log(xhr.readyState +"ReadyState");}
-        xhr.onload = () => {
-            console.log(xhr.status + "status");
-            if(xhr.status == 200){
-                listaJson = JSON.parse(xhr.responseText);  
-                //products = listaJson;            
-                listaJson.data.forEach((product, key) => {
-                    products = [...products,product];
-                    createProductElement(product, key);
-                });
-            }
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'readData.php', true);
+    xhr.onreadystatechange = () => { console.log(xhr.readyState + "ReadyState"); }
+    xhr.onload = () => {
+        console.log(xhr.status + "status");
+        if (xhr.status == 200) {
+            listaJson = JSON.parse(xhr.responseText);
+            //products = listaJson;            
+            listaJson.data.forEach((product, key) => {
+                products = [...products, product];
+                createProductElement(product, key);
+            });
         }
-        xhr.send();
-console.log("se ejecuta la funcion initApp" + products)
+    }
+    xhr.send();
+    console.log("se ejecuta la funcion initApp" + products)
 }
 
 //initApp();
@@ -248,6 +248,29 @@ function reloadCart() {
 
 }
 /**
+ * funcion para filtrar el producto
+ */
+function filtrado() {
+    var input = document.querySelector(".input");
+    var value = input.value.toLowerCase();
+    var filter = document.querySelector(".filter");
+    filter.innerHTML = ''; 
+    for (var i = 0; i < products.length; i++) {
+        var product = products[i];
+        if (product.name.toLowerCase() === value) {
+            var newDiv = document.createElement('div');
+            newDiv.classList.add('item');
+            newDiv.innerHTML = `
+                <img src="Asserts/productsImages/${product.image}">
+                <div class="title">${product.name}</div>
+                <div class="price">$${product.price.toLocaleString()}</div>
+                <div class="newprice">$${product.newPrice.toLocaleString()}</div>
+                <button onclick="addToCart(${i})">Añadir</button>`;
+            filter.appendChild(newDiv);
+        }
+    }
+}
+/**
  * Funcion para pagar cargar los productos en la lista los costos y el subtotal
  */
 function payment() {
@@ -271,6 +294,6 @@ function payment() {
     total.innerText = "Total: " + totalAmount.toLocaleString();
 }
 
-function redirect(){
+function redirect() {
     window.location.href = "https://localhost/Proyecto-web2/Website/IngresoTarjeta/ingresoTarjeta.html";
 }

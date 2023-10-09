@@ -2,14 +2,14 @@
     "data" :  [
         {
             "id": 1,
-            "name": "Air Jordan",
+            "name": "Pato",
             "image": "1.PNG",
             "price": 2000,
             "newPrice": 1000
         },
         {
             "id": 2,
-            "name": "Air Jordan",
+            "name": "Pata",
             "image": "2.PNG",
             "price": 2000,
             "newPrice": 1000

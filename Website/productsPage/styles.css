@@ -93,38 +93,50 @@ header .shopping span {
     align-items: center;
 }
 
-.catalogue .item {
+.catalogue .item,
+.filter .item {
     text-align: center;
-    box-shadow: 0 20px 20px #252525;
+    box-shadow: 0 15px 15px #252525;
     letter-spacing: 1px;
 
 }
-
+.input {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
 .catalogue .item img {
     background-color: rgb(245, 245, 245);
     max-width: 100%;
     height: auto;
 }
-
-.catalogue .item .title {
+.filter .item img {
+    background-color: rgb(245, 245, 245);
+    max-width: 200px;
+    height: auto;
+}
+.catalogue .item .title,
+.filter .item .title {
     margin-top: 20px;
     font-weight: 600;
 }
 
-.catalogue .item .price {
+.catalogue .item .price,
+.filter .item .price {
     display: inline-block;
     margin: 10px;
     margin-right: 10px;
     text-decoration: line-through;
 }
 
-.catalogue .item .newprice {
+.catalogue .item .newprice,
+.filter .item .newprice {
     display: inline-block;
     margin: 10px;
     color: red;
 }
 
-.catalogue .item button {
+.catalogue .item button,
+.filter .item button {
     font-family: 'Play', sans-serif;
     background-color: #000000;
     color: white;

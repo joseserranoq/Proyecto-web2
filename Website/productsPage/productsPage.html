@@ -15,7 +15,7 @@
 </head>
 
 <body class="" onload="initApp()">
-   
+
     <!-- contenedor de pagina de productos -->
     <div class="container">
         <header>
@@ -30,8 +30,12 @@
             <p>25-60% pff end-of-summer safe, online only thru Monday! Shop Sneakers
                 <span class="red-text">BLACK FRIDAY</span>
             </p>
-
         </header>
+        <!-- Input para filtrar -->
+        <input type="text" class="input" placeholder="Nombre del producto">
+        <button onclick="filtrado()">Buscar</button>
+        <!-- Contenedor para los resultados filtrados -->
+        <div class="filter"></div>
         <div class="catalogue">
         </div>
     </div>
@@ -55,7 +59,7 @@
             </button>
         </div>
     </div>
-    
+
     <!-- footer -->
     <footer>
         <div class="footer">
