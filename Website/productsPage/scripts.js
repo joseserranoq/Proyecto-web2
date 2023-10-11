@@ -1,5 +1,5 @@
 let openShopping = document.querySelector('.shopping');
-let openPayment = document.querySelector('.open');
+let openPayment = document.querySelector('.buttonPayProcess');
 let closeShopping = document.querySelector('.close');
 let closePayment = document.querySelector('.close-payment');
 let catalogue = document.querySelector('.catalogue');
@@ -12,106 +12,6 @@ let quantity = document.querySelector('.quantity');
 let notifications = document.querySelector('.notifications');
 let catalogueCarts = [];
 let products = [];
-// let products = [
-//     {
-//         id: 1,
-//         name: 'Air Jordan',
-//         image: '1.PNG',
-//         price: 2000,
-//         newPrice: 1000
-//     },
-//     {
-//         id: 2,
-//         name: 'Air Jordan',
-//         image: '2.PNG',
-//         price: 2000,
-//         newPrice: 1000
-//     },
-//     {
-//         id: 3,
-//         name: 'Air Jordan',
-//         image: '3.PNG',
-//         price: 2000,
-//         newPrice: 1000
-//     },
-//     {
-//         id: 4,
-//         name: 'Air Jordan',
-//         image: '4.PNG',
-//         price: 2000,
-//         newPrice: 1000
-//     },
-//     {
-//         id: 5,
-//         name: 'Air Jordan',
-//         image: '5.PNG',
-//         price: 2000,
-//         newPrice: 1000
-//     },
-//     {
-//         id: 6,
-//         name: 'Air Jordan',
-//         image: '6.PNG',
-//         price: 2000,
-//         newPrice: 1000
-//     },
-//     {
-//         id: 7,
-//         name: 'Air Jordan',
-//         image: '7.PNG',
-//         price: 2000,
-//         newPrice: 1000
-//     },
-//     {
-//         id: 8,
-//         name: 'Air Jordan',
-//         image: '8.PNG',
-//         price: 2000,
-//         newPrice: 1000
-//     },
-//     {
-//         id: 9,
-//         name: 'Air Jordan',
-//         image: '9.PNG',
-//         price: 2000,
-//         newPrice: 1000
-//     },
-//     {
-//         id: 10,
-//         name: 'Air Jordan',
-//         image: '16.PNG',
-//         price: 2000,
-//         newPrice: 1000
-//     },
-//     {
-//         id: 11,
-//         name: 'Air Jordan',
-//         image: '11.PNG',
-//         price: 2000,
-//         newPrice: 1000
-//     },
-//     {
-//         id: 12,
-//         name: 'Air Jordan',
-//         image: '12.PNG',
-//         price: 2000,
-//         newPrice: 1000
-//     },
-//     {
-//         id: 13,
-//         name: 'Air Jordan',
-//         image: '13.PNG',
-//         price: 2000,
-//         newPrice: 1000
-//     },
-//     {
-//         id: 14,
-//         name: 'Air Jordan',
-//         image: '14.PNG',
-//         price: 2000,
-//         newPrice: 1000
-//     },
-// ];
 
 function initApp() {
     quantity.style.display = "none";
@@ -130,16 +30,23 @@ function initApp() {
             });
         }
     }
+    
     xhr.send();
     console.log("se ejecuta la funcion initApp" + products)
 }
 
 //initApp();
+openPayment.addEventListener('click', () => {
+    if (catalogueCarts.length === 0) {
+        alert("No tienes productos en el carrito. Agrega productos antes de pagar.");
+    } else {
+        body.classList.add('pay-active');
+    }
+});
+
+
 openShopping.addEventListener('click', () => {
     body.classList.add('active');
-})
-openPayment.addEventListener('click', () => {
-    body.classList.add('pay-active');
 })
 closePayment.addEventListener('click', () => {
     //catalogueCarts = [];
@@ -155,13 +62,31 @@ function createProductElement(product, key) {
     const newDiv = document.createElement('div');
     newDiv.classList.add('item');
     newDiv.innerHTML = `
-      <img src="Asserts/productsImages/${product.image}">
-      <div class="title">${product.name}</div>
-      <div class="price">$${product.price.toLocaleString()}</div>
-      <div class="newprice">$${product.newPrice.toLocaleString()}</div>
-      <button onclick="addToCart(${key})">Añadir</button>`;
+        <img src="Asserts/productsImages/${product.image}">
+        <div class="title">${product.name}</div>
+        <div class="price">$${product.price.toLocaleString()}</div>
+        <div class="newprice">$${product.newPrice.toLocaleString()}</div>
+        <button onclick="addToCart(${key}); event.stopPropagation();">Añadir</button>
+        <div class="details" style="display: none;">
+            <p>Valoraciones: ${product.valoraciones}</p>
+            <p>Tennis-: ${product.to}</p>
+            <p>Size: ${product.size}</p>
+            <!-- Agrega aquí más detalles -->
+        </div>
+    `;
+    
+    newDiv.addEventListener('click', () => {
+        const details = newDiv.querySelector('.details');
+        if (details.style.display === 'none') {
+            details.style.display = 'block';
+        } else {
+            details.style.display = 'none';
+        }
+    });
+    
     catalogue.appendChild(newDiv);
 }
+
 
 // Funciones para la notificacion de la compra
 function createToast(type, icon, title, text) {
@@ -254,10 +179,13 @@ function filtrado() {
     var input = document.querySelector(".input");
     var value = input.value.toLowerCase();
     var filter = document.querySelector(".filter");
+    
+    // Limpiar el contenido actual de filter
     filter.innerHTML = ''; 
+
     for (var i = 0; i < products.length; i++) {
         var product = products[i];
-        if (product.name.toLowerCase() === value) {
+        if (product.name.toLowerCase().includes(value) || product.price === parseFloat(value)) {
             var newDiv = document.createElement('div');
             newDiv.classList.add('item');
             newDiv.innerHTML = `
@@ -266,10 +194,18 @@ function filtrado() {
                 <div class="price">$${product.price.toLocaleString()}</div>
                 <div class="newprice">$${product.newPrice.toLocaleString()}</div>
                 <button onclick="addToCart(${i})">Añadir</button>`;
+            
+            // Agregar el primer producto que coincide y salir del bucle
             filter.appendChild(newDiv);
+            break;
         }
     }
 }
+
+
+
+
+
 /**
  * Funcion para pagar cargar los productos en la lista los costos y el subtotal
  */
@@ -277,6 +213,15 @@ function payment() {
     paymentCart.innerHTML = '';
     let count = 0;
     let totalAmount = 0;
+
+    // Crear el encabezado con los títulos de las columnas
+    let headerDiv = document.createElement('li');
+    headerDiv.innerHTML = `
+        <div><strong>Nombre de Productos</strong></div>
+        <div><strong>Cantidad</strong></div>
+        <div><strong>Precio</strong></div>`;
+    paymentCart.appendChild(headerDiv);
+
     catalogueCarts.forEach((product) => {
         totalAmount = totalAmount + product.newPrice;
         count = count + product.quantity;
@@ -284,16 +229,43 @@ function payment() {
             let newDiv = document.createElement('li');
             newDiv.innerHTML = `
                 <div>${product.name}</div>
-                <div>${product.newPrice.toLocaleString()}</div>
-                <div class="count">${product.quantity}</div>`;
+                <div class="count">${product.quantity}</div>
+                <div>${product.newPrice.toLocaleString()}</div>`;
             paymentCart.appendChild(newDiv);
         } else {
-
+            // Puedes agregar un manejo especial para productos nulos si es necesario
         }
-    })
+    });
     total.innerText = "Total: " + totalAmount.toLocaleString();
 }
 
+
+
 function redirect() {
-    window.location.href = "https://localhost/Proyecto-web2/Website/IngresoTarjeta/ingresoTarjeta.html";
+    window.location.href = "../IngresoTarjeta/ingresoTarjeta.html";
 }
+
+function redirectH() {
+    window.location.href = "../homePage/homepage.html";
+}
+
+
+function adjustCardHeights() {
+    const cards = document.querySelectorAll('.item');
+    let maxHeight = 0;
+  
+    cards.forEach(card => {
+      const cardHeight = card.offsetHeight;
+      if (cardHeight > maxHeight) {
+        maxHeight = cardHeight;
+      }
+    });
+  
+    cards.forEach(card => {
+      card.style.height = maxHeight + 'px';
+    });
+  }
+  
+  // Llama a esta función después de agregar las tarjetas al catálogo
+  adjustCardHeights();
+  

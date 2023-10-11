@@ -6,7 +6,9 @@
             "image": "1.PNG",
             "price": 2200,
             "newPrice": 1100,
-            "valoraciones": 4.2
+            "valoraciones": 4.2,
+            "size": "M",
+            "to": "Hombre"
         },
         {
             "id": 2,
@@ -14,7 +16,9 @@
             "image": "2.PNG",
             "price": 1800,
             "newPrice": 900,
-            "valoraciones": 4.4
+            "valoraciones": 4.4,
+            "size": "S",
+            "to": "Mujer"
         },
         {
             "id": 3,
@@ -22,7 +26,9 @@
             "image": "3.PNG",
             "price": 2500,
             "newPrice": 1250,
-            "valoraciones": 4.6
+            "valoraciones": 4.6,
+            "size": "L",
+            "to": "Unisex"
         },
         {
             "id": 4,
@@ -30,7 +36,9 @@
             "image": "4.PNG",
             "price": 1900,
             "newPrice": 950,
-            "valoraciones": 3.4
+            "valoraciones": 3.4,
+            "size": "XL",
+            "to": "Hombre"
         },
         {
             "id": 5,
@@ -38,7 +46,9 @@
             "image": "5.PNG",
             "price": 2100,
             "newPrice": 1050,
-            "valoraciones": 4.7
+            "valoraciones": 4.7,
+            "size": "M",
+            "to": "Mujer"
         },
         {
             "id": 6,
@@ -46,7 +56,9 @@
             "image": "6.PNG",
             "price": 2300,
             "newPrice": 1150,
-            "valoraciones": 4.9
+            "valoraciones": 4.9,
+            "size": "S",
+            "to": "Unisex"
         },
         {
             "id": 7,
@@ -54,7 +66,9 @@
             "image": "7.PNG",
             "price": 2400,
             "newPrice": 1200,
-            "valoraciones": 5.0
+            "valoraciones": 5.0,
+            "size": "L",
+            "to": "Hombre"
         },
         {
             "id": 8,
@@ -62,7 +76,9 @@
             "image": "8.PNG",
             "price": 2000,
             "newPrice": 1000,
-            "valoraciones": 3.7
+            "valoraciones": 3.7,
+            "size": "M",
+            "to": "Unisex"
         },
         {
             "id": 9,
@@ -70,7 +86,9 @@
             "image": "9.PNG",
             "price": 2150,
             "newPrice": 1075,
-            "valoraciones": 4.4
+            "valoraciones": 4.4,
+            "size": "XL",
+            "to": "Mujer"
         },
         {
             "id": 10,
@@ -78,7 +96,9 @@
             "image": "16.PNG",
             "price": 1900,
             "newPrice": 950,
-            "valoraciones": 4.4
+            "valoraciones": 4.4,
+            "size": "L",
+            "to": "Unisex"
         },
         {
             "id": 11,
@@ -86,7 +106,9 @@
             "image": "11.PNG",
             "price": 2050,
             "newPrice": 1025,
-            "valoraciones": 4.1
+            "valoraciones": 4.1,
+            "size": "M",
+            "to": "Hombre"
         },
         {
             "id": 12,
@@ -94,7 +116,9 @@
             "image": "12.PNG",
             "price": 1950,
             "newPrice": 975,
-            "valoraciones": 3.8
+            "valoraciones": 3.8,
+            "size": "S",
+            "to": "Mujer"
         },
         {
             "id": 13,
@@ -102,7 +126,9 @@
             "image": "13.PNG",
             "price": 2600,
             "newPrice": 1300,
-            "valoraciones": 5.0
+            "valoraciones": 5.0,
+            "size": "M",
+            "to": "Unisex"
         },
         {
             "id": 14,
@@ -110,7 +136,9 @@
             "image": "14.PNG",
             "price": 2250,
             "newPrice": 1125,
-            "valoraciones": 4.6
+            "valoraciones": 4.6,
+            "size": "L",
+            "to": "Hombre"
         }
     ]
 }

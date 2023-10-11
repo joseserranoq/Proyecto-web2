@@ -20,7 +20,7 @@
     <div class="container">
         <header>
             <div class="first-header">
-                <h1>SPACESHOP</h1>
+                <h1><a style="text-decoration: none; color: white;" href="../homePage/homepage.html">SPACESHOP</a></h1>
                 <div class="notifications"></div>
                 <div class="shopping">
                     <img src="./Asserts/icons/cart.png" alt="Image1">
@@ -38,16 +38,18 @@
         </div>
         <!-- Contenedor para los resultados filtrados -->
         <div class="filter"></div>
-        <div class="catalogue">
-        </div>
+        <div class="catalogue"></div>
+
+
+
     </div>
     <div class="cart">
         <h2 class="close">&#10140;</h2>
-        <h2 class="open" onclick="payment()">PAGAR</h2>
         <p>SHOPPING CART</p>
         <ul class="catalogueCart">
         </ul>
         <br>
+        <h2 class="open" ><button  class="buttonPayProcess" onclick="payment()">PAGAR</button></h2>
     </div>
     <!-- payment button-->
     <div class="payment">
@@ -56,7 +58,7 @@
         </ul>
         <div class="checkOut">
             <div class="total"></div>
-            <button id="buttonPay" onclick="redirect()">
+            <button id="buttonPay" class="buttonPayProcess" onclick="redirect()">
                 CONFIRMAR PAGO
             </button>
         </div>
@@ -88,6 +90,7 @@
         </div>
     </footer>
     <script src="scripts.js"></script>
+    
 </body>
 
 

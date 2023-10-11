@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Courier New', Courier, monospace;
@@ -88,6 +93,7 @@ header .shopping span {
 .input {
     padding: 10px;
     width: 200px;
+    border-radius: 10px;
 }
 
 .button {
@@ -121,7 +127,7 @@ header .shopping span {
     text-align: center;
     box-shadow: 0 15px 15px #252525;
     letter-spacing: 1px;
-
+    min-height: 280px;
 }
 .filter {
     display: flex;
@@ -158,6 +164,7 @@ header .shopping span {
 .filter .item .title {
     margin-top: 20px;
     font-weight: 600;
+    min-height: 33px;
 }
 
 .catalogue .item .price,
@@ -181,11 +188,19 @@ header .shopping span {
     background-color: #000000;
     color: white;
     border-radius: 10px;
-    width: 25%;
+    width: 32%;
     padding: 5px;
-    margin-bottom: 20px;
     border: none;
-    /*quitar el border por defecto de un boton*/
+    display: block;
+    margin: auto auto 20px auto;
+}
+
+.details{
+    font-weight: bold;
+}
+.details p{
+    font-weight: bold;
+    margin: 10px;
 }
 
 .cart {
@@ -220,6 +235,25 @@ header .shopping span {
     margin-left: 20px;
     color: white;
 }
+
+.buttonPayProcess{
+    border-radius: 15px;
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background: #A31C1E;
+}
+
+.buttonPayProcess:hover{
+    background: white;
+    color: #A31C1E;
+}
+
 
 .catalogue button:hover {
     background-color: #f11111;
@@ -286,7 +320,9 @@ header .shopping span {
     background-color: #f6f6f6;
     color: #000;
     cursor: pointer;
+    margin-bottom: 19px;
 }
+
 
 .payment .checkOut .total p {
     padding-top: 25px;
@@ -390,8 +426,13 @@ header .shopping span {
     background-color: rgb(29, 29, 29);
     color: #f6f6f6;
     border-radius: 50px;
-    box-shadow: h-offset v-offset blur spread color inset;
+    padding: 5px;
     border: none;
+}
+
+.catalogueCart li button:hover{
+    background: white;
+    color: black;
 }
 
 .catalogueCart .count {
@@ -437,6 +478,17 @@ header .shopping span {
 }
 
 /* Rensponisve views */
+@media (max-width: 1088px) {
+    .catalogue .item .price, .filter .item .price{
+        margin: 0;
+    }
+    .catalogue .item .newprice, .filter .item .newprice {
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
 @media (max-width: 900px) {
     .catalogue {
         grid-template-columns: repeat(3, 1fr);
